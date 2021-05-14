@@ -1,9 +1,9 @@
 public class snake {
 
+public static final int Start = 0;
+
   public static void main(String[] args) {
-  System.out.println("Welcome");
+  System.out.println("Start position: " + Start);
 
   }
 }
-
-

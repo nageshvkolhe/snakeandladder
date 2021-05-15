@@ -10,7 +10,6 @@ public class snake {
       int Roll = 0;
       int Start = 0;
       int Reach = 0;
-      int Counter = 0;
 
       while (Reach <= WINNING_POSITION) {
          Reach++;
@@ -26,14 +25,13 @@ public class snake {
                    Roll = 0;
                    break;
              case LADDER:
-                   Counter++;
                    Roll = + Value;
                    break;
              case SNAKE:
                    Roll = -Value;
          }
         Position = (Position + Roll);
-        if (Position < Start && option == 0) {
+        if ((Position < Start) && (option == 0 )) {
              System.out.println("Current Position: " + Start );
              Reach = Start;
              System.out.println("Reached: " + Reach);
@@ -48,10 +46,8 @@ public class snake {
              System.out.println("Current Position: " + Position);
              Reach = Position;
              System.out.println("Reached: " + Reach);
-
        }
      }
-        System.out.println("Number of times dice was rolled to win game:" +Counter);
         System.out.println("Win: " + Reach);
    }
 }

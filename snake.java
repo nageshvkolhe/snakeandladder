@@ -31,21 +31,21 @@ public class snake {
                    Roll = -Value;
          }
         Position = (Position + Roll);
-        if (Position < 0 && option == 0) {
+        if ((Position < Start) && (option == 0 )) {
              System.out.println("Current Position: " + Start );
              Reach = Start;
              System.out.println("Reached: " + Reach);
         }
-        //else if (Position > 100){
-          //   System.out.println("Current Position: " + Position);
-            // Reach = WINNING_POSITION;
-             //System.out.println("Reached: " + Reach);
-     //   }
+        else if (Position  > WINNING_POSITION && (option == 0 || option == 1)) {
+             System.out.println("Current Position: " +WINNING_POSITION);
+             Reach = WINNING_POSITION;
+             System.out.println("Reached: " + Reach);
+             break;
+        }
         else {
              System.out.println("Current Position: " + Position);
              Reach = Position;
              System.out.println("Reached: " + Reach);
-
        }
      }
         System.out.println("Win: " + Reach);

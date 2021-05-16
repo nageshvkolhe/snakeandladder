@@ -36,7 +36,7 @@ public class snake {
              Reach = Start;
              System.out.println("Reached: " + Reach);
         }
-       else if ((Position > WINNING_POSITION) && (option == 1 || option == 2)) {
+       else if ((Position > WINNING_POSITION) && (option == 1 )) {
              System.out.println("Current Position: " + Position);
              Reach = WINNING_POSITION;
              System.out.println("Reached: " + Reach);

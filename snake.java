@@ -43,7 +43,7 @@ public class snake {
              Reach = WINNING_POSITION;
              System.out.println("Reached: " + Reach);
              break;
-        }
+       }
         else {
              System.out.println("Current Position: " + Position);
              Reach = Position;

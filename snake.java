@@ -11,7 +11,7 @@ public class snake {
       int Start = 0;
       int Reach = 0;
 
-      while (Reach <= WINNING_POSITION) {
+      while (Reach < WINNING_POSITION) {
          Reach++;
 
          int Value =(int) Math.floor((Math.random() * 6) + 1 );
@@ -20,14 +20,20 @@ public class snake {
          int option =(int) Math.floor((Math.random() * 10) % 3 );
          System.out.println("option number: " + option);
 
-         switch (option) {
+             switch (option) {
              case NO_PLAY:
-                   Roll = 0;
-                   break;
+                           Position += 0;
              case LADDER:
-                   Roll = + Value;
-                   break;
+                      if((Position + Value) < 100){
+                           Position += Value;
+                           Reach = Position;
+                      }
+                      else
+                           Position +=0;
+                           Reach = Position;
+                           break;
              case SNAKE:
+<<<<<<< HEAD
                    Roll = -Value;
          }
         Position = (Position + Roll);
@@ -48,6 +54,20 @@ public class snake {
              System.out.println("Reached: " + Reach);
        }
      }
+=======
+                     if (Position > 0){
+                         Position -= Value;
+                         Reach = Position;
+                     }
+                     else
+                         Position = 0;
+                         Reach = Position;
+                     break;
+             }
+             System.out.println("Reached: " + Reach);
+
+        }
+>>>>>>> UC-4-snakeandladder
         System.out.println("Win: " + Reach);
    }
 }

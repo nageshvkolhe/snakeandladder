@@ -11,7 +11,7 @@ public class snake {
       int Start = 0;
       int Reach = 0;
 
-      while (Reach <= WINNING_POSITION) {
+      while (Reach < WINNING_POSITION) {
          Reach++;
 
          int Value =(int) Math.floor((Math.random() * 6) + 1 );
@@ -20,34 +20,31 @@ public class snake {
          int option =(int) Math.floor((Math.random() * 10) % 3 );
          System.out.println("option number: " + option);
 
-         switch (option) {
+             switch (option) {
              case NO_PLAY:
-                   Roll = 0;
-                   break;
+                           Position += 0;
              case LADDER:
-                   Roll = + Value;
-                   break;
+                      if((Position + Value) < 100){
+                           Position += Value;
+                           Reach = Position;
+                      }
+                      else
+                           Position +=0;
+                           Reach = Position;
+                           break;
              case SNAKE:
-                   Roll = -Value;
-         }
-        Position = (Position + Roll);
-        if (Position < 0 && option == 0) {
-             System.out.println("Current Position: " + Start );
-             Reach = Start;
-             System.out.println("Reached: " + Reach);
-        }
-        //else if (Position > 100){
-          //   System.out.println("Current Position: " + Position);
-            // Reach = WINNING_POSITION;
-             //System.out.println("Reached: " + Reach);
-     //   }
-        else {
-             System.out.println("Current Position: " + Position);
-             Reach = Position;
+                     if (Position > 0){
+                         Position -= Value;
+                         Reach = Position;
+                     }
+                     else
+                         Position = 0;
+                         Reach = Position;
+                     break;
+             }
              System.out.println("Reached: " + Reach);
 
-       }
-     }
+        }
         System.out.println("Win: " + Reach);
    }
 }
